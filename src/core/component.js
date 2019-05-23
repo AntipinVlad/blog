@@ -8,12 +8,17 @@ export class Component {
     // Жизненный цикл компонента 
     init() { }
 
+    onHide() { }
+    onShow() { }
+
     hide() {
         this.$el.classList.add('hide');
+        this.onHide();
     }
-    
+
     show() {
         this.$el.classList.remove('hide');
+        this.onShow();
     }
 
 }
