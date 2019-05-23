@@ -1,5 +1,6 @@
 import { Component } from '../core/component'
 import { Form } from '../core/form'
+import { Validators } from '../core/validators'
 
 export class CreateComponent extends Component {
     constructor(id) {
@@ -10,8 +11,8 @@ export class CreateComponent extends Component {
         this.$el.addEventListener('submit', submitHandler.bind(this));
 
         this.from = new Form(this.$el, {
-            title: [],
-            fulltext: []
+            title: [Validators.required],
+            fulltext: [Validators.required]
         });
     }
 }

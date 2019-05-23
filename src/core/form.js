@@ -12,4 +12,7 @@ export class Form {
         })
         return value
     }
+    isValid() {
+
+    }
 }
