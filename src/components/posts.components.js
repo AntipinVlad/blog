@@ -18,6 +18,9 @@ export class PostsComponent extends Component {
     const fbData = await apiService.fetchPosts();
     const post = TransformService.fbObjectToArray(fbData);
     const html = post.map(post => renderPost(post))
+    if(html){
+      html.reverse()
+    }
     this.loader.hide()
     this.$el.insertAdjacentHTML('afterbegin', html.join(''))
   }
@@ -32,10 +35,10 @@ function buttonHandler(event) {
   const title = $el.dataset.title
 
   if (id){
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [] 
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || []
     const candidate = favorites.find(p => p.id === id)
 
-    if (favorites.includes(id)){
+    if (candidate){
       $el.textContent = 'Сохранить'
       $el.classList.add('button-primary')
       $el.classList.remove('button-danger')
