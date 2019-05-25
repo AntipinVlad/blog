@@ -6,6 +6,7 @@ import { apiService } from '../services/api.service'
 export class CreateComponent extends Component {
     constructor(id) {
         super(id);
+
     }
 
     init() {
