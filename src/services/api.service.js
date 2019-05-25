@@ -42,4 +42,4 @@ async function useRequest(request) {
     return await response.json()
 }
 
-export const apiService = new ApiService('https://blog-db-7630e.firebaseio.com');
+export const apiService = new ApiService('https://antipin-portfolio-blog-js.firebaseio.com');
